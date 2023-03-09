@@ -72,6 +72,28 @@ public class Tests extends BaseDriver {
     }
     @Test
     public void scenerio2() {
+        /*
+        2- "Selenium" kelimesi ile video aratınız.
+        3- Listelenen sonuçlarda 80 videoaya kadar lsiteyi uzatınız.
+        4- Son videonun title ını yazdırınız.
+        * */
+
+        driver.get("https://www.youtube.com/");
+
+        Actions actions = new Actions(driver);
+
+        WebElement searchBox=driver.findElement(By.xpath("//input[@name='search_query']"));
+        searchBox.sendKeys("Selenium");
+
+        Action action = actions.
+                moveToElement(searchBox).
+                click().
+                keyDown(Keys.ENTER).
+                keyUp(Keys.ENTER).
+                build();
+        action.perform();
+
+
 
     }
 }
