@@ -72,7 +72,14 @@ public class Tests extends BaseDriver {
     }
     @Test
     public void scenerio2() {
-
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
+        System.out.println("deneme");
     }
 }
 
