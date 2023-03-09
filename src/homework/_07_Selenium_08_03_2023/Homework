@@ -1,3 +1,4 @@
+
 1-
 
 Bu web sitesine gidin   [https://testpages.herokuapp.com/styled/index.html](https://testpages.herokuapp.com/styled/index.html)
@@ -5,8 +6,6 @@ Bu web sitesine gidin   [https://testpages.herokuapp.com/styled/index.html](http
 Alerts e tıklayınız
 
 URL'i yazdırınız.
-
-
 
 
 
@@ -28,8 +27,6 @@ Basic Ajax'a tıklayınız.
 
 
 
-
-
 3-
 
 Bu websitesine gidiniz. [https://testpages.herokuapp.com/styled/index.html](https://testpages.herokuapp.com/styled/index.html)
@@ -37,8 +34,6 @@ Bu websitesine gidiniz. [https://testpages.herokuapp.com/styled/index.html](http
 [Find By Playground'a tıklayınız.](https://testpages.herokuapp.com/find_by_playground.php)
 
          5. text'i bulunuz.
-
-
 
 
 
@@ -53,7 +48,6 @@ Search'e tıklayınız.
 Search button'una tıklayınız.
 
        URL'i yazdırınız.
-
 
 
 
@@ -75,7 +69,6 @@ Sonucu yazdırınız.
 
 
 
-
 6-
 
 Bu websitesine gidiniz.  [https://testpages.herokuapp.com/styled/index.html](https://testpages.herokuapp.com/styled/index.html)
@@ -87,8 +80,6 @@ Show Alert Box'a tıklayınız.
 Ok'a tıklayınız.
 
 Alert kapanmalıdır.
-
-
 
 
 
@@ -106,10 +97,9 @@ Alert kapanmalıdır.
 
 
 
-
 8-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html](https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html)
+Bu web sitesine gidiniz. http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html
 
 Normal success message'a tıklayınız.
 
@@ -117,13 +107,9 @@ Açılan yeşil penceredeki x buttonuna tıklayınız.
 
 
 
-
-
-
-
 9-
 
-Bu web sitesine gidiniz. https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html
+Bu web sitesine gidiniz. http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html
 
 Normal success message'a tıklayınız.
 
@@ -133,11 +119,9 @@ Mesaj görünmemelidir.
 
 
 
-
-
 10-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/basic-checkbox-demo.html](https://www.seleniumeasy.com/test/basic-checkbox-demo.html)
+Bu web sitesine gidiniz. http://demo.seleniumeasy.com/basic-checkbox-demo.html
 
 check all button'a tıklayınız.
 
@@ -149,7 +133,7 @@ Uncheck All button'da " Uncheck All" yazısını yazdırınız.
 
 11-
 
-Bu web sitesine gidiniz.   [https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html](https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html)
+Bu web sitesine gidiniz.   http://demo.seleniumeasy.com/basic-select-dropdown-demo.html
 
 Select a day dropdown'ından rastgele bir seçenek seçiniz.
 
@@ -164,7 +148,7 @@ Sonuç 5 olmalıdır.
 
 12-
 
-Bu siteye gidiniz.  [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu siteye gidiniz.  http://demo.seleniumeasy.com/basic-first-form-demo.html
 
 Input forms'a tıklayınız.
 
@@ -185,11 +169,11 @@ Yazıyı yazdırınız.
 
 13-
 
-Bu websitesine gidiniz. [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu websitesine gidiniz. [http://demo.seleniumeasy.com/basic-first-form-demo.html](http://demo.seleniumeasy.com/basic-first-form-demo.html)
 
 List box'a tıklayınız.
 
-[Bootstrap List Box'a tıklayınız.](https://www.seleniumeasy.com/test/bootstrap-dual-list-box-demo.html)
+[Bootstrap List Box'a tıklayınız.](http://demo.seleniumeasy.com/bootstrap-dual-list-box-demo.html)
 
 **bootstrap-duallist**'e tıklayınız. Sonra sağ ok (>)'a tıklayınız.
 
@@ -219,14 +203,9 @@ Morbi leo risus
 
 
 
-
-
-
-
-
 14-
 
-Bu web sitesine gidiniz.  [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu web sitesine gidiniz.  [http://demo.seleniumeasy.com/basic-first-form-demo.html](http://demo.seleniumeasy.com/basic-first-form-demo.html)
 
 Mesajınızı giriniz.
 
@@ -236,10 +215,9 @@ Show message button'unun altında mesajınızı yazdırınız.
 
 
 
-
 15-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu web sitesine gidiniz. [http://demo.seleniumeasy.com/basic-first-form-demo.html](http://demo.seleniumeasy.com/basic-first-form-demo.html)
 
 "Enter a" ya bir değer giriniz.
 
@@ -251,10 +229,9 @@ Web sitesindeki sonucu yazdırınız.
 
 
 
-
 16-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu web sitesine gidiniz. [http://demo.seleniumeasy.com/basic-first-form-demo.html](http://demo.seleniumeasy.com/basic-first-form-demo.html)
 
 Input Forms'a tıklayınız.
 
@@ -278,13 +255,9 @@ Get Checked Value buttonuna tıklayınız.
 
 
 
-
-
-
-
 17-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/basic-first-form-demo.html](https://www.seleniumeasy.com/test/basic-first-form-demo.html)
+Bu web sitesine gidiniz. [http://demo.seleniumeasy.com/basic-first-form-demo.html](http://demo.seleniumeasy.com/basic-first-form-demo.html)
 
 Input forms'a tıklayınız.
 
@@ -334,20 +307,9 @@ Sonuç  **Sex : female Age group: 15 - 50** olmalıdır.
 
 
 
-
-
-
-
-
-
-
-
-
-
 18-
 
-Bu web sitesine gidiniz. [https://www.seleniumeasy.com/test/table-search-filter-demo.html](https://www.seleniumeasy.com/test/table-search-filter-demo.html)
-
+Bu web sitesine gidiniz. http://demo.seleniumeasy.com/table-search-filter-demo.html
 Task tablosunda;
 
 "in progress" giriniz.
@@ -360,10 +322,9 @@ Not: find element kullanın ve yazdırırken for loop kullanın.
 
 
 
-
 19-
 
-Bu websitesine gidiniz. [https://www.seleniumeasy.com/test/table-search-filter-demo.html](https://www.seleniumeasy.com/test/table-search-filter-demo.html)
+Bu websitesine gidiniz. [http://demo.seleniumeasy.com/table-search-filter-demo.html](http://demo.seleniumeasy.com/table-search-filter-demo.html)
 
 Listed users tablosunun içinde;
 
@@ -381,17 +342,13 @@ Web sitesindeki username'leri bulunuz (içinde "ar" olanlar.)
 
 Bu username'leri yazdırınız.
 
-Not: find elements kullanınız.ve for loop kullanınız.
-
-
-
-
+Not: find elements ve for loop kullanınız.
 
 
 
 20-
 
-Bu web sitesine gidiniz. [https://en.wikipedia.org/wiki/FIFA_World_Cup](https://en.wikipedia.org/wiki/FIFA_World_Cup)
+Bu web sitesine gidiniz. [http://en.wikipedia.org/wiki/FIFA_World_Cup](http://en.wikipedia.org/wiki/FIFA_World_Cup)
 
 Contents'in içindeki Attendance'e  tıklayınız.
 
@@ -403,18 +360,14 @@ Find elements kullanınız.
 
 
 
-
-
 21-
 
-Bu websitesine gidiniz. [https://en.wikipedia.org/wiki/FIFA_World_Cup](https://en.wikipedia.org/wiki/FIFA_World_Cup)
+Bu websitesine gidiniz.    https://en.wikipedia.org/wiki/FIFA_World_Cup
 
-Contents'in içindeki All-time table for champions'a tıklayınız.
+Contents'in içindeki   "World Football – All time table"    'a tıklayınız.
 
 Argentina'nın participation(katılım) sayısını yazdırınız.
 
 Not: Bu tablo zamanla değişebilir. Mutlak konumu yazdırmayın.
 
 Argentina'nın participation'ını yazdırınız.
-
-
