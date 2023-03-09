@@ -106,7 +106,40 @@ public class Tests extends BaseDriver {
         MyFunc.bekle(5);
         js.executeScript("arguments[0].click();", video80);
         MyFunc.bekle(5);
-
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* sdftqertwe45tywwtekdfpohklsbh
+* agjkdfplgjopsmg
+*
+*
+*
+*
+* drlgpğsdlrgp
+* edgoksdopfgbk
+* posdfjfkgop*/
     }
 }
 
