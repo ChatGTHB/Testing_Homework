@@ -70,4 +70,10 @@ public class Tests extends BaseDriver {
             }
         }
     }
+    @Test
+    public void scenerio2() {
+
+    }
 }
+
+
