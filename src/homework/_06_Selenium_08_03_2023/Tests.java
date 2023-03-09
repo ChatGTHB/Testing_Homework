@@ -1,7 +1,7 @@
-package homework._08_03_2023_Selenium_01;
+package homework._06_Selenium_08_03_2023;
 
-import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -10,8 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import utility.BaseDriver;
 import utility.MyFunc;
-
-import java.time.Duration;
 
 public class Tests extends BaseDriver {
     @Test
