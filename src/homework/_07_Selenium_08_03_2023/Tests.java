@@ -120,6 +120,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test7() {
+
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
         WebElement fakeAlertsLink = driver.findElement(By.id("fakealerttest"));
@@ -135,6 +136,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test8() {
+
         driver.get("http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html");
 
         WebElement normalSuccessMessageLink = driver.findElement(By.id("normal-btn-success"));
@@ -147,6 +149,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test9() {
+
         driver.get("http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html");
 
         WebElement normalSuccessMessageLink = driver.findElement(By.id("normal-btn-success"));
@@ -163,6 +166,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test10() {
+
         driver.get("http://demo.seleniumeasy.com/basic-checkbox-demo.html");
 
         WebElement normalSuccessMessageLink = driver.findElement(By.id("normal-btn-success"));
@@ -179,6 +183,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test11() {
+
         driver.get("http://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
 
         WebElement daySelect = driver.findElement(By.id("select-demo"));
@@ -200,6 +205,7 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test12() {
+
         driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
 
         WebElement inputFormLink = driver.findElement(By.xpath("//a[text()='Input Forms']"));
@@ -262,7 +268,6 @@ public class Tests extends BaseDriver {
         dapibusAcFacilisisInBox.click();
 
         leftArrow.click();
-
     }
 
     @Test
@@ -278,8 +283,6 @@ public class Tests extends BaseDriver {
 
         WebElement verificationMessage = driver.findElement(By.id("display"));
         System.out.println("My message = " + verificationMessage.getText());
-
-
     }
 
     @Test
@@ -298,8 +301,42 @@ public class Tests extends BaseDriver {
 
         WebElement total = driver.findElement(By.id("displayvalue"));
         System.out.println("Total = " + total.getText());
+    }
+    @Test
+    public void test16() {
 
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
 
+        WebElement inputFormLink = driver.findElement(By.xpath("//a[text()='Input Forms']"));
+        inputFormLink.click();
+
+        WebElement radioButtonsDemoLink = driver.findElement(By.xpath("(//a[text()='Radio Buttons Demo'])[2]"));
+        radioButtonsDemoLink.click();
+
+        WebElement getCheckedValueButton = driver.findElement(By.id("buttoncheck"));
+        getCheckedValueButton.click();
+
+        WebElement verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
+
+        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button is Not checked");
+
+        WebElement maleRadioButton=driver.findElement(By.xpath("(//input[@value='Male'])[1]"));
+        maleRadioButton.click();
+
+        getCheckedValueButton.click();
+
+        verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
+
+        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button 'Male' is checked");
+
+        WebElement femaleRadioButton=driver.findElement(By.xpath("(//input[@value='Female'])[1]"));
+        femaleRadioButton.click();
+
+        getCheckedValueButton.click();
+
+        verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
+
+        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button 'Female' is checked");
     }
 
 
