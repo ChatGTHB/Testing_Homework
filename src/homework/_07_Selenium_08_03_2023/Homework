@@ -182,7 +182,7 @@ Sağa gönderilen elemanların üstüne bir kere daha tıklayıp beyaz hale geti
 
 **Cras husto odio**'a tıklayınız ve sol ok(<)'a tıklayınız.
 
-**Morbi leo risus**'a tıklayınız ve sol ok(<)'a tıklayınız.
+**Morbi leo risus**'a tıklayınız ve sol ok(<)'a tıklayınız. (- **Dapibus ac facilisis in** olmalı)
 
 Sol kutu bu şekilde olmalıdır.
 
@@ -194,7 +194,7 @@ Sol kutu bu şekilde olmalıdır.
 
 Sağ kutu bu şekilde olmalıdır.
 
-Morbi leo risus
+- Morbi leo risus
 - Porta ac consectetur ac
 - Vestibulum at eros
 - bootstrap-duallist

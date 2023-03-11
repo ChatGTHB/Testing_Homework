@@ -4,10 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.BaseDriver;
-import utility.MyFunc;
+import utility.MyFunction;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Tests extends BaseDriver {
@@ -194,6 +197,73 @@ public class Tests extends BaseDriver {
 
         System.out.println("Wednesday Number of Views = " + wednesdayEnabled);
     }
+
+    @Test
+    public void test12() {
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+
+        WebElement inputFormLink = driver.findElement(By.xpath("//a[text()='Input Forms']"));
+        inputFormLink.click();
+
+        WebElement ajaxFormSubmitLink = driver.findElement(By.xpath("(//a[text()='Ajax Form Submit'])[2]"));
+        ajaxFormSubmitLink.click();
+
+        WebElement name= driver.findElement(By.id("title"));
+        name.sendKeys("Name");
+
+        WebElement comment = driver.findElement(By.id("description"));
+        comment.sendKeys("Comment added.");
+
+        WebElement submitButton = driver.findElement(By.id("btn-submit"));
+        submitButton.click();
+
+        WebElement submitSuccessMessage = driver.findElement(By.id("submit-control"));
+        WebElement submitSuccessMessage2 = driver.findElement(By.xpath("//div[text()='Form submited Successfully!']"));
+
+        Assert.assertEquals("Form submited unsuccessfully!",submitSuccessMessage.getText(),"Form submited Successfully!");
+
+        System.out.println("Submit Success Message = " + submitSuccessMessage.getText());
+    }
+    @Test
+    public void test13() {
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+
+        WebElement listBoxLink = driver.findElement(By.xpath("//a[text()='List Box']"));
+        listBoxLink.click();
+
+        WebElement bootstrapListBoxLink = driver.findElement(By.xpath("(//a[text()='Bootstrap List Box'])[2]"));
+        bootstrapListBoxLink.click();
+
+        WebElement bootstrapDuallistBox = driver.findElement(By.xpath("//li[text()='bootstrap-duallist ']"));
+        bootstrapDuallistBox.click();
+
+        WebElement rightArrow= driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-right']"));
+        rightArrow.click();
+
+        WebElement dapibusAcFacilisisInBox = driver.findElement(By.xpath("(//li[text()='Dapibus ac facilisis in'])[1]"));
+        dapibusAcFacilisisInBox.click();
+
+        rightArrow.click();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     @Test

@@ -13,45 +13,41 @@ public class BaseDriver {
     public static WebDriver driver;
 
     static {
+        closeRemainingPreviouses();
 
-        kalanOncekileriKapat();
+        Logger logger = Logger.getLogger("");
+        logger.setLevel(Level.SEVERE); //
 
-        Logger logger = Logger.getLogger(""); // output'a ait bütün logları üreten objeye/servise ulaştım ""
-        logger.setLevel(Level.SEVERE); // Sadece errorları göster
-
-        // gerekmeyen logları kaldıracağız
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+       // System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-        // driver = new ChromeDriver();
 
-        driver.manage().window().maximize(); // Ekranı max yapıyor
+       // driver = new ChromeDriver();
+       // driver = new EdgeDriver();
+
+        driver.manage().window().maximize(); // Ekranı max yapıyor.
 
         Duration dr = Duration.ofSeconds(30);
         driver.manage().timeouts().pageLoadTimeout(dr);
-        // Sadece tüm sayfanın kodlarının bilgisyarınıza inmesi süresiyle ilgili
-        // bu eklenmezse Selenium sayfa yüklenene kadar (sonsuza) bekler.:
-        // 30 sn süresince sayfanın yüklenmesini bekle yüklenmezse hata ver
-        // eğer 2 sn yüklerse 30 sn. beklemez.
 
         driver.manage().timeouts().implicitlyWait(dr);
-        // Bütün weblementlerin element bazında,
-        // elemente özel işlem yapılmadan önce
-        // hazır hale gelmesi verilen mühlet yani süre.
-        // eğer 2 sn yüklerse 30 sn. beklemez.
-
     }
-    public static void bekleKapat() {
-        MyFunc.bekle(3);
+    public static void waitAndClose() {
+        MyFunction.wait(5);
         driver.quit();
     }
-    public static void kalanOncekileriKapat() {
+
+    public static void closeRemainingPreviouses() {
+
         try {
             Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
         } catch (Exception ignored) {
 
         }
-    }
-}
 
+    }
+
+}

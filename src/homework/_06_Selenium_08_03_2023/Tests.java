@@ -8,13 +8,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.BaseDriver;
-import utility.MyFunc;
+import utility.MyFunction;
 
-import java.time.Duration;
 
 public class Tests extends BaseDriver {
     @Test
@@ -71,7 +68,7 @@ public class Tests extends BaseDriver {
 
                 WebElement clearButton = driver.findElement(By.id("clearButton"));
                 clearButton.click();
-                MyFunc.bekle(1);
+                MyFunction.wait(1);
             }
         }
     }
@@ -99,13 +96,13 @@ public class Tests extends BaseDriver {
         action.perform();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        MyFunc.bekle(5);
+        MyFunction.wait(5);
         WebElement video80=driver.findElement(By.xpath("//yt-formatted-string[text()='Selenium with Python Full Course For Beginners']"));
-        MyFunc.bekle(5);
+        MyFunction.wait(5);
         js.executeScript("arguments[0].scrollIntoView(true);", video80);
-        MyFunc.bekle(5);
+        MyFunction.wait(5);
         js.executeScript("arguments[0].click();", video80);
-        MyFunc.bekle(5);
+        MyFunction.wait(5);
     }
 }
 
