@@ -416,31 +416,72 @@ public class Tests extends BaseDriver {
 
     @Test
     public void test18() {
+
         driver.get("http://demo.seleniumeasy.com/table-search-filter-demo.html");
 
-        WebElement filterByTaskAssigneeStatusBox = driver.findElement(By.id("task-table-filter"));
-        filterByTaskAssigneeStatusBox.sendKeys("in progress");
-
+        WebElement filterByTaskAssigneeStatus = driver.findElement(By.id("task-table-filter"));
+        filterByTaskAssigneeStatus.sendKeys("in progress");
 
         WebElement task1 = driver.findElement(By.xpath("//td[text()='Wireframes']"));
         WebElement task2 = driver.findElement(By.xpath("//td[text()='Bootstrap 3']"));
         WebElement task3 = driver.findElement(By.xpath("//td[text()='Bug fixing']"));
-        List<WebElement>tasks=new ArrayList<>(Arrays.asList(task1,task2,task3));
+        List<WebElement> tasks = new ArrayList<>(Arrays.asList(task1, task2, task3));
 
         for (WebElement task : tasks) {
             System.out.println(task.getText());
         }
 
+        System.out.println("|*******************|");
+
         WebElement assigne1 = driver.findElement(By.xpath("//td[text()='John Smith']"));
         WebElement assigne2 = driver.findElement(By.xpath("//td[text()='Emily John']"));
         WebElement assigne3 = driver.findElement(By.xpath("//td[text()='Kilgore Trout']"));
-        List<WebElement>assignes=new ArrayList<>(Arrays.asList(assigne1,assigne2,assigne3));
+        List<WebElement> assignes = new ArrayList<>(Arrays.asList(assigne1, assigne2, assigne3));
 
         for (WebElement asssigne : assignes) {
             System.out.println(asssigne.getText());
         }
+    }
+
+
+/*
+
+First Name filtre kutusuna "an" giriniz.
+
+web sitesindeki first name'leri bulunuz. (içinde "an" olanlar.)
+
+Bu first name'leri yazdırınız.
+
+First Name filtre kutusundaki yazıyı siliniz.
+
+Usernames filtre kutusuna "ar" giriniz.
+
+Web sitesindeki username'leri bulunuz (içinde "ar" olanlar.)
+
+Bu username'leri yazdırınız.
+
+Not: find elements ve for loop kullanınız.
+*/
+    @Test
+    public void test19() {
+        driver.get("http://demo.seleniumeasy.com/table-search-filter-demo.html");
+
+        WebElement filterButton = driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-filter']"));
+        filterButton.click();
+
+        WebElement firstName = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
+        firstName.sendKeys("an");
+        
+        WebElement firstName1 = driver.findElement(By.xpath("//td[text()='Daniel']"));
+        WebElement firstName2 = driver.findElement(By.xpath("//td[text()='Rajano']"));
+        List<WebElement> firstNames = new ArrayList<>(Arrays.asList(firstName1, firstName2));
+
+        for (WebElement firstname : firstNames) {
+            System.out.println(firstname.getText());
+        }
 
     }
+
 
     @Test
     public void test20() {
