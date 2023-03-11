@@ -265,9 +265,42 @@ public class Tests extends BaseDriver {
 
     }
 
+    @Test
+    public void test14() {
+
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+
+        WebElement messageBox = driver.findElement(By.xpath("//input[@id='user-message']"));
+        messageBox.sendKeys("Message");
+
+        WebElement showMessageButton = driver.findElement(By.xpath("//button[@class='btn btn-default']"));
+        showMessageButton.click();
+
+        WebElement verificationMessage = driver.findElement(By.id("display"));
+        System.out.println("My message = " + verificationMessage.getText());
 
 
+    }
 
+    @Test
+    public void test15() {
+
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+
+        WebElement enterABox = driver.findElement(By.id("sum1"));
+        enterABox.sendKeys("11");
+
+        WebElement enterBBox = driver.findElement(By.id("sum2"));
+        enterBBox.sendKeys("23");
+
+        WebElement getTotalButton = driver.findElement(By.xpath("//button[text()='Get Total']"));
+        getTotalButton.click();
+
+        WebElement total = driver.findElement(By.id("displayvalue"));
+        System.out.println("Total = " + total.getText());
+
+
+    }
 
 
 
