@@ -11,6 +11,8 @@ import utility.BaseDriver;
 import utility.MyFunction;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Tests extends BaseDriver {
@@ -214,7 +216,7 @@ public class Tests extends BaseDriver {
         WebElement ajaxFormSubmitLink = driver.findElement(By.xpath("(//a[text()='Ajax Form Submit'])[2]"));
         ajaxFormSubmitLink.click();
 
-        WebElement name= driver.findElement(By.id("title"));
+        WebElement name = driver.findElement(By.id("title"));
         name.sendKeys("Name");
 
         WebElement comment = driver.findElement(By.id("description"));
@@ -226,10 +228,11 @@ public class Tests extends BaseDriver {
         WebElement submitSuccessMessage = driver.findElement(By.id("submit-control"));
         WebElement submitSuccessMessage2 = driver.findElement(By.xpath("//div[text()='Form submited Successfully!']"));
 
-        Assert.assertEquals("Form submited unsuccessfully!",submitSuccessMessage.getText(),"Form submited Successfully!");
+        Assert.assertEquals("Form submited unsuccessfully!", submitSuccessMessage.getText(), "Form submited Successfully!");
 
         System.out.println("Submit Success Message = " + submitSuccessMessage.getText());
     }
+
     @Test
     public void test13() {
 
@@ -244,7 +247,7 @@ public class Tests extends BaseDriver {
         WebElement bootstrapDuallistBox = driver.findElement(By.xpath("//li[text()='bootstrap-duallist ']"));
         bootstrapDuallistBox.click();
 
-        WebElement rightArrow= driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-right']"));
+        WebElement rightArrow = driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-right']"));
         rightArrow.click();
 
         WebElement dapibusAcFacilisisInBox = driver.findElement(By.xpath("(//li[text()='Dapibus ac facilisis in'])[1]"));
@@ -252,19 +255,19 @@ public class Tests extends BaseDriver {
 
         rightArrow.click();
 
-        bootstrapDuallistBox=driver.findElement(By.xpath("(//li[@class='list-group-item active'])[1]"));
+        bootstrapDuallistBox = driver.findElement(By.xpath("(//li[@class='list-group-item active'])[1]"));
         bootstrapDuallistBox.click();
 
-        dapibusAcFacilisisInBox=driver.findElement(By.xpath("(//li[text()='Dapibus ac facilisis in'])[2]"));
+        dapibusAcFacilisisInBox = driver.findElement(By.xpath("(//li[text()='Dapibus ac facilisis in'])[2]"));
         dapibusAcFacilisisInBox.click();
 
-        WebElement crasJustoOdioBox=driver.findElement(By.xpath("//li[text()='Cras justo odio']"));
+        WebElement crasJustoOdioBox = driver.findElement(By.xpath("//li[text()='Cras justo odio']"));
         crasJustoOdioBox.click();
 
-        WebElement leftArrow= driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-left']"));
+        WebElement leftArrow = driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-left']"));
         leftArrow.click();
 
-        dapibusAcFacilisisInBox=driver.findElement(By.xpath("//li[text()='Dapibus ac facilisis in']"));
+        dapibusAcFacilisisInBox = driver.findElement(By.xpath("//li[text()='Dapibus ac facilisis in']"));
         dapibusAcFacilisisInBox.click();
 
         leftArrow.click();
@@ -302,6 +305,7 @@ public class Tests extends BaseDriver {
         WebElement total = driver.findElement(By.id("displayvalue"));
         System.out.println("Total = " + total.getText());
     }
+
     @Test
     public void test16() {
 
@@ -318,41 +322,125 @@ public class Tests extends BaseDriver {
 
         WebElement verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
 
-        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button is Not checked");
+        Assert.assertEquals(verificationCheckedMessage.getText(), "Radio button is Not checked");
 
-        WebElement maleRadioButton=driver.findElement(By.xpath("(//input[@value='Male'])[1]"));
+        WebElement maleRadioButton = driver.findElement(By.xpath("(//input[@value='Male'])[1]"));
         maleRadioButton.click();
 
         getCheckedValueButton.click();
 
         verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
 
-        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button 'Male' is checked");
+        Assert.assertEquals(verificationCheckedMessage.getText(), "Radio button 'Male' is checked");
 
-        WebElement femaleRadioButton=driver.findElement(By.xpath("(//input[@value='Female'])[1]"));
+        WebElement femaleRadioButton = driver.findElement(By.xpath("(//input[@value='Female'])[1]"));
         femaleRadioButton.click();
 
         getCheckedValueButton.click();
 
         verificationCheckedMessage = driver.findElement(By.className("radiobutton"));
 
-        Assert.assertEquals(verificationCheckedMessage.getText(),"Radio button 'Female' is checked");
+        Assert.assertEquals(verificationCheckedMessage.getText(), "Radio button 'Female' is checked");
     }
 
+    @Test
+    public void test17() {
+
+        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+
+        WebElement inputFormLink = driver.findElement(By.xpath("//a[text()='Input Forms']"));
+        inputFormLink.click();
+
+        WebElement radioButtonsDemoLink = driver.findElement(By.xpath("(//a[text()='Radio Buttons Demo'])[2]"));
+        radioButtonsDemoLink.click();
+
+        WebElement maleGroupRadioButton = driver.findElement(By.xpath("(//input[@value='Male'])[2]"));
+        maleGroupRadioButton.click();
+
+        WebElement _0to5Button = driver.findElement(By.xpath("//input[@value='0 - 5']"));
+        _0to5Button.click();
+
+        WebElement getValueButton = driver.findElement(By.xpath("(//button[@class='btn btn-default'])[2]"));
+        getValueButton.click();
+
+        WebElement verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+        WebElement _5to15Button = driver.findElement(By.xpath("//input[@value='5 - 15']"));
+        _5to15Button.click();
+
+        getValueButton.click();
+
+        verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+        WebElement _15to50Button = driver.findElement(By.xpath("//input[@value='15 - 50']"));
+        _15to50Button.click();
+
+        getValueButton.click();
+
+        verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+        WebElement femaleGroupRadioButton = driver.findElement(By.xpath("(//input[@value='Female'])[2]"));
+        femaleGroupRadioButton.click();
+
+        _0to5Button.click();
+
+        getValueButton.click();
+
+        verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+        _5to15Button.click();
+
+        getValueButton.click();
+
+        verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+        _15to50Button.click();
+
+        getValueButton.click();
+
+        verificationGetValuesMessage = driver.findElement(By.xpath("//p[@class='groupradiobutton']"));
+
+        System.out.println("Get values message = " + verificationGetValuesMessage.getText());
+
+    }
+
+    @Test
+    public void test18() {
+        driver.get("http://demo.seleniumeasy.com/table-search-filter-demo.html");
+
+        WebElement filterByTaskAssigneeStatusBox = driver.findElement(By.id("task-table-filter"));
+        filterByTaskAssigneeStatusBox.sendKeys("in progress");
 
 
+        WebElement task1 = driver.findElement(By.xpath("//td[text()='Wireframes']"));
+        WebElement task2 = driver.findElement(By.xpath("//td[text()='Bootstrap 3']"));
+        WebElement task3 = driver.findElement(By.xpath("//td[text()='Bug fixing']"));
+        List<WebElement>tasks=new ArrayList<>(Arrays.asList(task1,task2,task3));
 
+        for (WebElement task : tasks) {
+            System.out.println(task.getText());
+        }
 
+        WebElement assigne1 = driver.findElement(By.xpath("//td[text()='John Smith']"));
+        WebElement assigne2 = driver.findElement(By.xpath("//td[text()='Emily John']"));
+        WebElement assigne3 = driver.findElement(By.xpath("//td[text()='Kilgore Trout']"));
+        List<WebElement>assignes=new ArrayList<>(Arrays.asList(assigne1,assigne2,assigne3));
 
+        for (WebElement asssigne : assignes) {
+            System.out.println(asssigne.getText());
+        }
 
-
-
-
-
-
-
-
-
+    }
 
     @Test
     public void test20() {
