@@ -226,6 +226,7 @@ public class Tests extends BaseDriver {
     }
     @Test
     public void test13() {
+
         driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
 
         WebElement listBoxLink = driver.findElement(By.xpath("//a[text()='List Box']"));
@@ -244,6 +245,23 @@ public class Tests extends BaseDriver {
         dapibusAcFacilisisInBox.click();
 
         rightArrow.click();
+
+        bootstrapDuallistBox=driver.findElement(By.xpath("(//li[@class='list-group-item active'])[1]"));
+        bootstrapDuallistBox.click();
+
+        dapibusAcFacilisisInBox=driver.findElement(By.xpath("(//li[text()='Dapibus ac facilisis in'])[2]"));
+        dapibusAcFacilisisInBox.click();
+
+        WebElement crasJustoOdioBox=driver.findElement(By.xpath("//li[text()='Cras justo odio']"));
+        crasJustoOdioBox.click();
+
+        WebElement leftArrow= driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-chevron-left']"));
+        leftArrow.click();
+
+        dapibusAcFacilisisInBox=driver.findElement(By.xpath("//li[text()='Dapibus ac facilisis in']"));
+        dapibusAcFacilisisInBox.click();
+
+        leftArrow.click();
 
     }
 
