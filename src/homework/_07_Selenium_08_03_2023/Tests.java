@@ -4,7 +4,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utility.BaseDriver;
+import utility.MyFunc;
 
 import java.util.List;
 
@@ -170,6 +172,27 @@ public class Tests extends BaseDriver {
 
         Assert.assertFalse(successMessage.isDisplayed());
 
+    }
+
+    @Test
+    public void test11() {
+        driver.get("http://demo.seleniumeasy.com/basic-select-dropdown-demo.html");
+
+        WebElement daySelect = driver.findElement(By.id("select-demo"));
+        Select day = new Select(daySelect);
+
+        int wednesdayEnabled = 0;
+
+        do {
+            int randomNumber = (int) (Math.random() * 7) + 1;
+            day.selectByIndex(randomNumber);
+            WebElement dayVerification = driver.findElement(By.className("selected-value"));
+            if (dayVerification.getText().contains("Wednesday")) {
+                wednesdayEnabled++;
+            }
+        } while (wednesdayEnabled != 5);
+
+        System.out.println("Wednesday Number of Views = " + wednesdayEnabled);
     }
 
 
