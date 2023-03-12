@@ -370,3 +370,18 @@ Argentina'nın participation(katılım) sayısını yazdırınız.
 Not: Bu tablo zamanla değişebilir. Mutlak konumu yazdırmayın.
 
 Argentina'nın participation'ını yazdırınız.
+
+
+    NOT:
+
+/*  Soruda verilen konuma erişilemediğinden, soru şu şekilde güncellenerek çözüme gidildi:
+
+    Bu web sitesine gidiniz. [http://en.wikipedia.org/wiki/FIFA_World_Cup]
+
+    Contents'in içindeki "Attendance"e tıklayıp, "Attandance" tablosunda yer alan;
+
+    Dünya Kupası turnuvasının şimdiye kadar düzenlendiği yıllar ile
+
+    düzenlenmesinin planlandığı bir sonraki yıl yazdırıldı.
+
+    Find elements kullanıldı. */

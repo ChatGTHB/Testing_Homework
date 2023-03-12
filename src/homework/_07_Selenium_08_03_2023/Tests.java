@@ -170,16 +170,10 @@ public class Tests extends BaseDriver {
 
         driver.get("http://demo.seleniumeasy.com/basic-checkbox-demo.html");
 
-        WebElement normalSuccessMessageLink = driver.findElement(By.id("normal-btn-success"));
-        normalSuccessMessageLink.click();
+        WebElement checkAllButton= driver.findElement(By.id("check1"));
+        checkAllButton.click();
 
-        WebElement successMessage = driver.findElement(By.cssSelector("[class='alert alert-success alert-normal-success']"));
-
-        WebElement closeSuccessMessage = driver.findElement(By.xpath("(//button[@class='close'])[1]"));
-        closeSuccessMessage.click();
-
-        Assert.assertFalse(successMessage.isDisplayed());
-
+        Assert.assertEquals(checkAllButton.getAttribute("value"),"Uncheck All");
     }
 
     @Test
@@ -462,7 +456,7 @@ public class Tests extends BaseDriver {
         System.out.print("The First Names : ");
         List<String[]> informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
         for (String[] information : informations) {
-            System.out.print("#"+information[2]+" ");
+            System.out.print("#" + information[2] + " ");
         }
 
         Actions actions = new Actions(driver);
@@ -485,11 +479,11 @@ public class Tests extends BaseDriver {
         informationUser1 = user1Information.get(0).getText().split(" ");
         informationUser2 = user2Information.get(0).getText().split(" ");
 
-        System.out.println("\n"+"*=====**======*****======**=====*");
+        System.out.println("\n" + "*=====**======*****======**=====*");
         System.out.print("The Usernames : ");
         informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
         for (String[] information : informations) {
-            System.out.print("#"+information[1]+" ");
+            System.out.print("#" + information[1] + " ");
         }
     }
 
@@ -498,7 +492,7 @@ public class Tests extends BaseDriver {
 
         driver.get("http://en.wikipedia.org/wiki/FIFA_World_Cup");
 
-        WebElement attendanceLink = driver.findElement(By.xpath("//*[@id=\"toc-Attendance\"]/a/div"));
+        WebElement attendanceLink = driver.findElement(By.xpath("//*[@id='toc-Attendance']/a/div"));
         attendanceLink.click();
 
         List<WebElement> hosts = driver.findElements(By.xpath("//td[@style='text-align:left' or @style='text-align: left']"));
@@ -509,22 +503,32 @@ public class Tests extends BaseDriver {
         System.out.println("hosts.size() = " + hosts.size());
     }
 
-    /*21-
-
-Bu websitesine gidiniz.    https://en.wikipedia.org/wiki/FIFA_World_Cup
-
-Contents'in içindeki   "World Football – All time table"    'a tıklayınız.
-
-Argentina'nın participation(katılım) sayısını yazdırınız.
-
-Not: Bu tablo zamanla değişebilir. Mutlak konumu yazdırmayın.
-
-Argentina'nın participation'ını yazdırınız.*/
-
 
     @Test
     public void test21() {
-        driver.get("https://en.wikipedia.org/wiki/FIFA_World_Cup");
 
+        /* Soruda verilen konuma erişilemediğinden aşağıdaki şekilde çözüme gidildi .
+
+           Contents'in içindeki "Attendance"e tıklanıp, "Attandance" tablosunda yer alan;
+
+           Dünya Kupası turnuvasının şimdiye kadar düzenlendiği yıllar ile
+
+           düzenlenmesinin planlandığı bir sonraki yıl yazdırıldı.
+
+           Find elements kullanıldı. */
+
+        driver.get("https://en.wikipedia.org/wiki/FIFA_World_Cup");
+        WebElement attendanceLink = driver.findElement(By.xpath("//*[@id='toc-Attendance']/a/div"));
+        attendanceLink.click();
+
+        List<WebElement> years = driver.findElements(By.xpath("//td[@style='text-align: center']"));
+
+        for (WebElement year : years) {
+            System.out.println(year.getText());
+        }
+        waitAndClose();
     }
 }
+
+
+
