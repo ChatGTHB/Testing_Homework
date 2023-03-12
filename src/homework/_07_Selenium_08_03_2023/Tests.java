@@ -17,7 +17,7 @@ import java.util.List;
 public class Tests extends BaseDriver {
 
     @Test
-    public void test1() {
+    public void test01() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -29,7 +29,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test2() {
+    public void test02() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -49,7 +49,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test3() {
+    public void test03() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -63,7 +63,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test4() {
+    public void test04() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -82,7 +82,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test5() {
+    public void test05() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -104,7 +104,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test6() {
+    public void test06() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -120,7 +120,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test7() {
+    public void test07() {
 
         driver.get("https://testpages.herokuapp.com/styled/index.html");
 
@@ -136,7 +136,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test8() {
+    public void test08() {
 
         driver.get("http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html");
 
@@ -149,7 +149,7 @@ public class Tests extends BaseDriver {
     }
 
     @Test
-    public void test9() {
+    public void test09() {
 
         driver.get("http://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html");
 
