@@ -170,10 +170,10 @@ public class Tests extends BaseDriver {
 
         driver.get("http://demo.seleniumeasy.com/basic-checkbox-demo.html");
 
-        WebElement checkAllButton= driver.findElement(By.id("check1"));
+        WebElement checkAllButton = driver.findElement(By.id("check1"));
         checkAllButton.click();
 
-        Assert.assertEquals(checkAllButton.getAttribute("value"),"Uncheck All");
+        Assert.assertEquals(checkAllButton.getAttribute("value"), "Uncheck All");
     }
 
     @Test
@@ -444,24 +444,21 @@ public class Tests extends BaseDriver {
         WebElement filterButton = driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-filter']"));
         filterButton.click();
 
-        WebElement firstName = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
-        firstName.sendKeys("an");
+        WebElement firstNameBox = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
+        firstNameBox.sendKeys("an");
 
-        List<WebElement> user1Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[2]"));
-        List<WebElement> user2Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[5]"));
-
-        String[] informationUser1 = user1Information.get(0).getText().split(" ");
-        String[] informationUser2 = user2Information.get(0).getText().split(" ");
+        List<WebElement> usersFirstNameList = driver.findElements(By.xpath("(//table)[2]/tbody/tr/td[3]"));
 
         System.out.print("The First Names : ");
-        List<String[]> informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
-        for (String[] information : informations) {
-            System.out.print("#" + information[2] + " ");
-        }
 
+        for (WebElement firstName : usersFirstNameList) {
+            if (firstName.getText().contains("an")) {
+                System.out.print("#" + firstName.getText() + " ");
+            }
+        }
         Actions actions = new Actions(driver);
         Action action = actions.
-                moveToElement(firstName).
+                moveToElement(firstNameBox).
                 click().
                 keyDown(Keys.BACK_SPACE).
                 keyUp(Keys.BACK_SPACE).
@@ -470,20 +467,18 @@ public class Tests extends BaseDriver {
                 build();
         action.perform();
 
-        WebElement username = driver.findElement(By.xpath("//input[@placeholder='Username']"));
-        username.sendKeys("ar");
+        WebElement usernameBox = driver.findElement(By.xpath("//input[@placeholder='Username']"));
+        usernameBox.sendKeys("ar");
 
-        user1Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[1]"));
-        user2Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[3]"));
-
-        informationUser1 = user1Information.get(0).getText().split(" ");
-        informationUser2 = user2Information.get(0).getText().split(" ");
+        List<WebElement> usersUsernameList = driver.findElements(By.xpath("(//table)[2]/tbody/tr/td[2]"));
 
         System.out.println("\n" + "*=====**======*****======**=====*");
         System.out.print("The Usernames : ");
-        informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
-        for (String[] information : informations) {
-            System.out.print("#" + information[1] + " ");
+
+        for (WebElement username : usersUsernameList) {
+            if (username.getText().contains("ar")) {
+                System.out.print("#" + username.getText() + " ");
+            }
         }
     }
 

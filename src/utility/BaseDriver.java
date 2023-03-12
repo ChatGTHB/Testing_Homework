@@ -30,7 +30,7 @@ public class BaseDriver {
 
         driver.manage().window().maximize(); // Ekranı max yapıyor.
 
-        Duration dr = Duration.ofSeconds(30);
+        Duration dr = Duration.ofSeconds(60);
         driver.manage().timeouts().pageLoadTimeout(dr);
 
         driver.manage().timeouts().implicitlyWait(dr);
