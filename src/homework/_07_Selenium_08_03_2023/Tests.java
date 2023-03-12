@@ -3,14 +3,13 @@ package homework._07_Selenium_08_03_2023;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.BaseDriver;
-import utility.MyFunction;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -443,27 +442,9 @@ public class Tests extends BaseDriver {
         }
     }
 
-
-/*
-
-First Name filtre kutusuna "an" giriniz.
-
-web sitesindeki first name'leri bulunuz. (içinde "an" olanlar.)
-
-Bu first name'leri yazdırınız.
-
-First Name filtre kutusundaki yazıyı siliniz.
-
-Usernames filtre kutusuna "ar" giriniz.
-
-Web sitesindeki username'leri bulunuz (içinde "ar" olanlar.)
-
-Bu username'leri yazdırınız.
-
-Not: find elements ve for loop kullanınız.
-*/
     @Test
     public void test19() {
+
         driver.get("http://demo.seleniumeasy.com/table-search-filter-demo.html");
 
         WebElement filterButton = driver.findElement(By.xpath("//span[@class='glyphicon glyphicon-filter']"));
@@ -471,20 +452,50 @@ Not: find elements ve for loop kullanınız.
 
         WebElement firstName = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
         firstName.sendKeys("an");
-        
-        WebElement firstName1 = driver.findElement(By.xpath("//td[text()='Daniel']"));
-        WebElement firstName2 = driver.findElement(By.xpath("//td[text()='Rajano']"));
-        List<WebElement> firstNames = new ArrayList<>(Arrays.asList(firstName1, firstName2));
 
-        for (WebElement firstname : firstNames) {
-            System.out.println(firstname.getText());
+        List<WebElement> user1Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[2]"));
+        List<WebElement> user2Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[5]"));
+
+        String[] informationUser1 = user1Information.get(0).getText().split(" ");
+        String[] informationUser2 = user2Information.get(0).getText().split(" ");
+
+        System.out.print("The First Names : ");
+        List<String[]> informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
+        for (String[] information : informations) {
+            System.out.print("#"+information[2]+" ");
         }
 
-    }
+        Actions actions = new Actions(driver);
+        Action action = actions.
+                moveToElement(firstName).
+                click().
+                keyDown(Keys.BACK_SPACE).
+                keyUp(Keys.BACK_SPACE).
+                keyDown(Keys.BACK_SPACE).
+                keyUp(Keys.BACK_SPACE).
+                build();
+        action.perform();
 
+        WebElement username = driver.findElement(By.xpath("//input[@placeholder='Username']"));
+        username.sendKeys("ar");
+
+        user1Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[1]"));
+        user2Information = driver.findElements(By.xpath("(//table[@class='table']/tbody/tr)[3]"));
+
+        informationUser1 = user1Information.get(0).getText().split(" ");
+        informationUser2 = user2Information.get(0).getText().split(" ");
+
+        System.out.println("\n"+"*=====**======*****======**=====*");
+        System.out.print("The Usernames : ");
+        informations = new ArrayList<>(Arrays.asList(informationUser1, informationUser2));
+        for (String[] information : informations) {
+            System.out.print("#"+information[1]+" ");
+        }
+    }
 
     @Test
     public void test20() {
+
         driver.get("http://en.wikipedia.org/wiki/FIFA_World_Cup");
 
         WebElement attendanceLink = driver.findElement(By.xpath("//*[@id=\"toc-Attendance\"]/a/div"));
@@ -496,6 +507,24 @@ Not: find elements ve for loop kullanınız.
             System.out.println("host.getText() = " + host.getText());
         }
         System.out.println("hosts.size() = " + hosts.size());
+    }
+
+    /*21-
+
+Bu websitesine gidiniz.    https://en.wikipedia.org/wiki/FIFA_World_Cup
+
+Contents'in içindeki   "World Football – All time table"    'a tıklayınız.
+
+Argentina'nın participation(katılım) sayısını yazdırınız.
+
+Not: Bu tablo zamanla değişebilir. Mutlak konumu yazdırmayın.
+
+Argentina'nın participation'ını yazdırınız.*/
+
+
+    @Test
+    public void test21() {
+        driver.get("https://en.wikipedia.org/wiki/FIFA_World_Cup");
 
     }
 }
