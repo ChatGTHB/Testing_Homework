@@ -25,7 +25,6 @@ public class Tests extends BaseDriver {
         alertsLink.click();
 
         System.out.println("Current Url = " + driver.getCurrentUrl());
-
     }
 
     @Test
