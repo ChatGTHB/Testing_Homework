@@ -172,6 +172,9 @@ public class Tests extends BaseDriver {
         WebElement checkAllButton = driver.findElement(By.id("check1"));
         checkAllButton.click();
 
+        checkAllButton = driver.findElement(By.id("check1"));
+        System.out.println(checkAllButton.getAttribute("value"));
+
         Assert.assertEquals(checkAllButton.getAttribute("value"), "Uncheck All");
     }
 

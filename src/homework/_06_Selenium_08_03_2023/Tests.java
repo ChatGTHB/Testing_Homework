@@ -12,11 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.BaseDriver;
-import utility.MyFunction;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -25,6 +22,8 @@ public class Tests extends BaseDriver {
     public void scenerio1() {
 
         driver.get("https://testsheepnz.github.io/BasicCalculator.html");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         Actions actions = new Actions(driver);
 
@@ -61,46 +60,46 @@ public class Tests extends BaseDriver {
                         sendKeys(Integer.toString(randomNumber2)).
                         build();
                 action.perform();
-                MyFunction.wait(1);
+            }
 
-                for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 5; j++) {
 
-                    WebElement operationMenu = driver.findElement(By.id("selectOperationDropdown"));
+                WebElement operationMenu = driver.findElement(By.id("selectOperationDropdown"));
 
-                    Select operationSelect = new Select(operationMenu);
-                    operationSelect.selectByIndex(j);
+                Select operationSelect = new Select(operationMenu);
+                operationSelect.selectByIndex(j);
 
-                    WebElement calculateButton = driver.findElement(By.id("calculateButton"));
-                    calculateButton.click();
+                wait.until(ExpectedConditions.elementToBeClickable(By.id("calculateButton")));
 
-                    WebElement calculateAnswer = driver.findElement(By.id("numberAnswerField"));
+                WebElement calculateButton = driver.findElement(By.id("calculateButton"));
+                calculateButton.click();
 
-                    switch (j) {
-                        case 0:
-                            Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 + randomNumber2));
-                            break;
-                        case 1:
-                            Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 - randomNumber2));
-                            break;
-                        case 2:
-                            Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 * randomNumber2));
-                            break;
-                        case 3:
-                            integersOnlyRadioInput.click();
-                            Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf((randomNumber1 / randomNumber2)));
-                            break;
-                        case 4:
-                            Assert.assertEquals(calculateAnswer.getAttribute("value"), "" + randomNumber1 + randomNumber2);
-                            break;
-                    }
+                WebElement calculateAnswer = driver.findElement(By.id("numberAnswerField"));
 
-                    WebElement clearButton = driver.findElement(By.id("clearButton"));
-                    clearButton.click();
-                    MyFunction.wait(1);
+                switch (j) {
+                    case 0:
+                        Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 + randomNumber2));
+                        break;
+                    case 1:
+                        Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 - randomNumber2));
+                        break;
+                    case 2:
+                        Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf(randomNumber1 * randomNumber2));
+                        break;
+                    case 3:
+                        integersOnlyRadioInput.click();
+                        Assert.assertEquals(calculateAnswer.getAttribute("value"), String.valueOf((randomNumber1 / randomNumber2)));
+                        break;
+                    case 4:
+                        Assert.assertEquals(calculateAnswer.getAttribute("value"), "" + randomNumber1 + randomNumber2);
+                        break;
                 }
+                WebElement clearButton = driver.findElement(By.id("clearButton"));
+                clearButton.click();
             }
         }
     }
+
 
     @Test
     public void scenerio2() {
@@ -131,10 +130,11 @@ public class Tests extends BaseDriver {
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".style-scope ytd-video-renderer")));
             videos = driver.findElements(By.cssSelector(".style-scope ytd-video-renderer"));
         }
-        WebElement video80= videos.get(79);
-        video80.click();
-        wait.until(ExpectedConditions.elementToBeClickable(video80));
-        System.out.println("Title = " + driver.getTitle());
+
+        videos.get(79).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button")));
+        System.out.println("The Eightieth Video Title: " + driver.getTitle());
 
         waitAndClose();
     }
