@@ -131,10 +131,14 @@ public class Tests extends BaseDriver {
             videos = driver.findElements(By.cssSelector(".style-scope ytd-video-renderer"));
         }
 
+        // The First Solution
         videos.get(79).click();
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-left-controls > button")));
         System.out.println("The Eightieth Video Title: " + driver.getTitle());
+
+        // The Second Solution
+//        js.executeScript("arguments[0].scrollIntoView(true)", videos.get(79));
+//        System.out.println(videos.get(79).findElement(By.id("video-title")).getText());
 
         waitAndClose();
     }
