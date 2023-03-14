@@ -15,6 +15,8 @@ import utility.BaseDriver;
 import utility.MyFunction;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -121,6 +123,7 @@ public class Tests extends BaseDriver {
         action.perform();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
+
         List<WebElement> videos = driver.findElements(By.cssSelector(".style-scope ytd-video-renderer"));
 
         while (videos.size() < 80) {
@@ -128,8 +131,9 @@ public class Tests extends BaseDriver {
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(".style-scope ytd-video-renderer")));
             videos = driver.findElements(By.cssSelector(".style-scope ytd-video-renderer"));
         }
-        videos.get(80).click();
-        MyFunction.wait(3);
+        WebElement video80= videos.get(79);
+        video80.click();
+        wait.until(ExpectedConditions.elementToBeClickable(video80));
         System.out.println("Title = " + driver.getTitle());
 
         waitAndClose();
